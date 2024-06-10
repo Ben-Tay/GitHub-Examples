@@ -29,17 +29,42 @@ cd /workspace/tmp
 ```sh
 git clone https://github.com/Ben-Tay/GitHub-Examples.git
 cd GitHub-Examples
+
+# Cloning using HTTPs w API:
+Username: YOUR_USERNAME
+Password: YOUR_PAT
 ```
  
-> Require a Personal Access Token (PAT)
-when cloning from local development
+ #### Personal Account Access Tokens
+> Used when cloning from local development
+* Acts an `alternative to using passwords` for Github authentication when using the API or the CLI
 
 1. Generate a PAT first:
 https://github.com/settings/tokens?type=beta
 
 2. Set the PAT permissions as follows (expiry time, permissions etc)
 3. Use PAT as the pasword when you login
+> Github `no longer` allows using passwords when interacting with the API (hence use PAT)
+
+2 Kinds of PAT
+#### Classic Tokens
+* Less secure & not recommended to use
+* May be still used in legacy systems
+
+#### Fine-grained personal tokens
+* Granted specific permissions & must have an expiry date
+* Can only access specific repositories & resources owned by `single` user or org.
+
+#### Configure GH_TOKEN
+> Used w/ Github CLI to configure and set the PAT_Token
+```sh
+export GH_TOKEN="MY_PERSONAL_ACCESS_TOKEN"
+gh pr create --title "The bug is fixed" --body "Everything works again"
+```
+> When using `Github SDKS`, need to pass PAT to authorize API calls (octokit)
+
 ## SSH (check ssh_keys docs)
+
 
 ## Github CLI
 > Command Line interface to interact with Github Account
