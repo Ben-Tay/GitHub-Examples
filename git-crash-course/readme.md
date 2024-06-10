@@ -39,34 +39,7 @@ https://github.com/settings/tokens?type=beta
 
 2. Set the PAT permissions as follows (expiry time, permissions etc)
 3. Use PAT as the pasword when you login
-
-### SSH 
-Cloning is possible if it is a public repository, else credentials are required 
-
-```ssh
-git clone git@github.com:Ben-Tay/GitHub-Examples.git
-```
-> Generating an ssh private/public key for pushing (Linux command)
-```s
-ssh-keygen -t rsa
-## Save private key in a file (use full path)
-github-alt_id_rsa.pub
-
-## Enter passphrase (for more security but optional)
-
-## Public key will be auto generated 
-```
-### Cat the file path to the public key (in linux) and add its contents to our github account
-https://github.com/settings/keys
-
-> For WSL users and if create non default key might need to add it 
-```
-ssh-add privatekeypath
-eval `ssh-agent`
-
-# Debug if authentication connection works (if ssh-add doesnt work)
-ssh-T git@github.com 
-```
+## SSH (check ssh_keys docs)
 
 ## Github CLI
 > Command Line interface to interact with Github Account
@@ -91,11 +64,15 @@ export GH_TOKEN = "PAT_token link"
 # Can Choose to clone via ssh/https
 gh repo clone Ben-Tay/GitHub-Examples
 ```
-#### Installation (CLI) installable on Windows/Linux/MacOs
+#### Installation for Git CLI
+> Installable on MacOS/Linux/Windows
 ```sh
 # MacOs
 brew install gh
-# Install CLI for Codespaces via Features
+```
+#### Install via Github Codespaces (Devcontainers)
+```sh
+# Add code below in devcontainers of codespaces
 "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
 }
