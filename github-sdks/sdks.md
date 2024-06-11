@@ -14,3 +14,6 @@ https://github.com/octokit
 ghcr.io/devcontainers/features/terraform:1	{}
 ```
 https://containers.dev/features
+
+## Useful Links:
+https://github.com/integrations/terraform-provider-github

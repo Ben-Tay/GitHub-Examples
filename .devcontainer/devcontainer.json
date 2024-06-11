@@ -1,9 +1,7 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
+// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "Anaconda (Python 3)",
-	"build": { 
-		"context": "..",
+	"name": "Untitled Ruby project",
+	"build": {
 		"dockerfile": "Dockerfile"
 	},
 	"customizations": {
@@ -18,5 +16,7 @@
     	"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/terraform:1": {}
 
-	}
+	},
+  "remoteUser": "devcontainer"
 }
+
