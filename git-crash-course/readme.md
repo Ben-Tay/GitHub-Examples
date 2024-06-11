@@ -60,7 +60,10 @@ https://github.com/settings/tokens?type=beta
 ```sh
 export GH_TOKEN="MY_PERSONAL_ACCESS_TOKEN"
 gh pr create --title "The bug is fixed" --body "Everything works again"
+ # Check if environment variable for token is set
+ env | grep GH_
 ```
+
 > When using `Github SDKS`, need to pass PAT to authorize API calls (octokit)
 
 ## SSH (check ssh_keys docs)
@@ -75,17 +78,31 @@ Documentation: https://cli.github.com/manual/
 ```sh
 gh auth login
 gh repo create github-examples --public
-gh repo set-default #selects default repo to use in the current directory
-gh issue create --title "Issue title" --body "Issue body"
 gh pr review --comment -b "interesting"
 gh label list
 gh label create bug --description "Something isn't working" --color E99695
-
-# Use generated PAT instead of default one in github
+```
+#### PAT Token (Using CLI)
+```sh
+# Github can auto generate a default PAT for you
+gh auth token
+# Otherwise, you can also overwrite the default PAT by generating one in developer settings and exporting it to an environment variable
 export GH_TOKEN = "PAT_token link"
- # Check if environment variable for token is set
- env | grep GH_
-
+# Check if environment variable for token is set
+env | grep GH_
+# Finally, if you run `gh auth token` again it will be the overwritten version
+```
+#### Issues (Using CLI)
+```sh
+# Step 1: First select a default repository
+gh repo set-default 
+# Step 2: Create issues (need to enable in repo settings)
+gh issue create --title "I found a bug" --body "Nothing works"
+# Step 3: Check the list of issues
+gh issue list
+# Step 4: Deleting any issues
+gh issue delete [issue_number]
+```
 # Can Choose to clone via ssh/https
 gh repo clone Ben-Tay/GitHub-Examples
 ```
