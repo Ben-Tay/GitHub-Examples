@@ -1,0 +1,9 @@
+# Create new ruby gemfile: bundle init
+# frozen_string_literal: true 
+
+source "https://rubygems.org"
+
+# gem "rails"
+gem 'octokit' #bundle install to effect it
+gem 'faraday-retry'
+gem 'faraday-multipart'
