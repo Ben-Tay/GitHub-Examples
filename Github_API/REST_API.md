@@ -14,7 +14,7 @@
 ```sh
 curl -L \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer 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" \
+  -H "Authorization: Bearer <Your PAT>" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/issues
 ```
